@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           return;
         }
 
-        grunt.log.subhead('cdn:' + type + ' - ' + filepath);
+        //grunt.log.subhead('cdn:' + type + ' - ' + filepath);
 
         // Incrementing counter of active jobs
         activeJobs++;
@@ -54,9 +54,9 @@ module.exports = function(grunt) {
           job = engine.css(options);
         }
         job.start(content).on("entry", function (data) {
-          grunt.log.writeln('Changing ' + data.before.cyan + ' -> ' + data.after.cyan);
+          //grunt.log.writeln('Changing ' + data.before.cyan + ' -> ' + data.after.cyan);
         }).on("ignore", function (data) {
-          grunt.verbose.writeln("skipping " + data.resource, data.reason);
+          //grunt.verbose.writeln("skipping " + data.resource, data.reason);
         }).on("end", function (result) {
           // write the contents to destination
           grunt.file.write(destfile, result);
